@@ -2,9 +2,9 @@
 File Based Trie data structure to perform insert, search and delete operations on secondary storage
 
 ## Quick run
-gcc mainTrie.c -o mainTrie -lm;./mainTrie<inputCreate
-gcc mainTrie.c -o mainTrie -lm;./mainTrie<inputInsert
-gcc mainTrie.c -o mainTrie -lm;./mainTrie<inputSearch
+gcc mainTrie.c -o mainTrie -lm;./mainTrie<inputCreate;
+gcc mainTrie.c -o mainTrie -lm;./mainTrie<inputInsert;
+gcc mainTrie.c -o mainTrie -lm;./mainTrie<inputSearch;
 
 We have used file redirection to standard input.
 By default the length is set to 5 in the input files. It can be changed as per the need as by following the format provide below.
