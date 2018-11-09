@@ -54,7 +54,7 @@ void insertTrie()
             t2= 26*t2 + val;
             if((val<26)&&(val>=0))
             {
-                addr[t1+t2]='1';
+                addr[t1+t2]='1' + (input[pos+1]==' ');
                 pos++;
                 printf("%lld+%lld=%lld ",t1,t2,t1+t2);
             }
