@@ -11,9 +11,8 @@
 
 void searchTrie()
 {
-    char trie_file_name[SIZE],input[MAX],word_file_name[SIZE],ch;
+    char trie_file_name[SIZE],input[MAX],word_file_name[SIZE],ch,c;
     long long int length,pos,val,i,t1,t2,cond,j;
-    scanf("%lld",&length);
     scanf("%s",trie_file_name);
     scanf("%s",word_file_name);
 
@@ -25,7 +24,6 @@ void searchTrie()
        if (fstat(my_trie_fd, &myStat)){
            printf("fstat error\n");
        }
-
        off_t size = myStat.st_size;
        char *addr;
        addr = mmap(NULL, size, PROT_READ|PROT_WRITE, MAP_SHARED, my_trie_fd, 0);
@@ -35,8 +33,14 @@ void searchTrie()
     FILE *fp;
     fp=fopen(word_file_name,"r");
     i=0;
-    while(fgets(input,length+2,fp))
+    c=fgetc(fp);
+    while(c!=EOF)
     {
+        for(length=0;c!=' ';length++,c=fgetc(fp))
+            input[length]=c;
+        input[length]=c;
+        c=fgetc(fp);
+
         printf("%lld-%s\n",i,input);
         i++;
         cond=1;
@@ -63,7 +67,7 @@ void searchTrie()
                 printf("%c",addr[t1+t2-val+j]);
             printf("\n");
         }
-	(cond)?printf("Yes\n"):printf("No\n");
+	(cond==2)?printf("Yes\n"):printf("No\n");
     }
 }
 
