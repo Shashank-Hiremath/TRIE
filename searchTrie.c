@@ -39,6 +39,7 @@ void searchTrie()
         for(length=0;c!=' ';length++,c=fgetc(fp))
             input[length]=c;
         input[length]=c;
+        input[length+1]='\0';
         c=fgetc(fp);
 
         printf("%lld-%s\n",i,input);
