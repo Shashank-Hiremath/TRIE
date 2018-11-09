@@ -11,9 +11,8 @@
 
 void insertTrie()
 {
-    char trie_file_name[SIZE],input[MAX],word_file_name[SIZE];
+    char trie_file_name[SIZE],input[MAX],word_file_name[SIZE],c;
     long long int length,pos,val,i,t1,t2;
-    scanf("%lld",&length);
     scanf("%s",trie_file_name);
     scanf("%s",word_file_name);
 
@@ -36,8 +35,14 @@ void insertTrie()
     fp=fopen(word_file_name,"r");
     i=0;
     int cnt=10;
-    while(fgets(input,length+2,fp))
+    c=fgetc(fp);
+    while(c!=EOF)
     {
+        for(length=0;c!=' ';length++,c=fgetc(fp))
+            input[length]=c;
+        input[length]=c;
+        c=fgetc(fp);
+
         printf("%lld-%s\t",i,input);
         i++;
         pos=0;
@@ -59,7 +64,7 @@ void insertTrie()
                 return;
             }
         }
-    printf("\n");
+        printf("\n");
     }
 }
 
