@@ -7,7 +7,7 @@ gcc mainTrie.c -o mainTrie -lm;./mainTrie<inputInsert;
 gcc mainTrie.c -o mainTrie -lm;./mainTrie<inputSearch;
 
 We have used file redirection to standard input.
-By default the length is set to 5 in the input files. It can be changed as per the need by following the format provide below.
+By default the length is set to 5 in the input files. It can be changed as per the need by following the format provided below.
 
 ## Create
 
